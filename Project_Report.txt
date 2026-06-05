@@ -1,0 +1,217 @@
+CA PORTAL — STAGE 2 PROJECT REPORT
+====================================
+Student Name   : Rajeswari
+Stage          : Stage 2 – Functionality
+Submission     : Stage2_Functionality_Rajeswari.zip
+Date           : June 2026
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. PROJECT OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Project Name   : CA Portal – Computer Applications Department Website
+Description    : A multi-page responsive website for a college Computer
+                 Applications department. Stage 2 adds full JavaScript
+                 interactivity, animations, form validation, modals,
+                 a lightbox, dark mode, search filtering, and smooth
+                 scroll reveal effects on top of the Stage 1 structure.
+
+Technology Stack:
+  - HTML5
+  - CSS3 (Flexbox, Grid, animations, dark-mode theming)
+  - Vanilla JavaScript (ES6+)
+  - Google Fonts (Poppins)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. LIVE DEPLOYMENT LINK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+URL: [Paste your GitHub Pages / Netlify URL here after deployment]
+
+Example (GitHub Pages):
+  https://<your-username>.github.io/Stage2_Functionality_Rajeswari/
+
+Deployment steps used:
+  1. Created a public GitHub repository named
+     "Stage2_Functionality_Rajeswari"
+  2. Uploaded all project files
+  3. Enabled GitHub Pages from Settings → Pages → Branch: main / root
+  4. Verified the live URL displays the complete website
+
+Login credentials (if applicable): N/A — no login required
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. FILE STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Stage2_Functionality_Rajeswari/
+│
+├── index.html          ← Home page
+├── about.html          ← About the Department
+├── events.html         ← Upcoming Events (with search & registration)
+├── gallery.html        ← Photo Gallery (with lightbox)
+├── contact.html        ← Contact Form (with validation)
+│
+├── css/
+│   └── styles.css      ← All styling, dark mode, animations, responsive
+│
+├── js/
+│   └── script.js       ← All JavaScript functionality
+│
+├── images/
+│   ├── logo.png
+│   ├── campus.png
+│   ├── students.png
+│   ├── coding.png
+│   ├── event.png
+│   ├── graduation.png
+│   ├── achievement.png
+│   └── tech-bg.png
+│
+└── Project_Report.txt  ← This file
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. HTML–CSS–JS LINKING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Every HTML page links to the same external files:
+
+  <link rel="stylesheet" href="css/styles.css">   ← in <head>
+  <script src="js/script.js"></script>             ← before </body>
+
+This ensures styles and scripts load correctly across all pages without
+any inline styles or inline scripts.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. INTERACTIVE FEATURES (9 TOTAL)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FEATURE 1 – Contact Form Validation
+  Page: contact.html
+  How: Checks name is not empty, email matches a regex pattern, and
+       message is at least 10 characters. Shows a green success message
+       or red error message without reloading the page.
+
+FEATURE 2 – Event Registration Modal
+  Page: events.html
+  How: Clicking "Register Now" on any event card opens an animated
+       modal popup with a registration form. Validates name + email
+       then shows a confirmation and auto-closes.
+
+FEATURE 3 – Gallery Lightbox
+  Page: gallery.html
+  How: Clicking any gallery image opens a full-screen lightbox overlay
+       showing the image enlarged. Click the close button or outside
+       the image to dismiss.
+
+FEATURE 4 – Event Search / Filter
+  Page: events.html
+  How: A live search bar filters event cards as the user types. Cards
+       whose text does not match the query are hidden instantly.
+
+FEATURE 5 – Dark Mode Toggle
+  Pages: All pages (navbar button)
+  How: Pressing the 🌙 Dark Mode button switches the entire site to a
+       dark colour scheme. The preference is saved in localStorage so
+       it persists across page navigation.
+
+FEATURE 6 – Animated Counters
+  Page: about.html
+  How: Statistics (500+ students, 20+ faculty, etc.) count up from 0
+       to their target number with a smooth animation when the page
+       loads, drawing the user's attention.
+
+FEATURE 7 – Scroll-to-Top Button
+  Pages: All pages
+  How: A floating ↑ button appears after scrolling 300 px down. Clicking
+       it smoothly scrolls back to the top of the page.
+
+FEATURE 8 – Mobile Hamburger Menu
+  Pages: All pages (responsive)
+  How: On screens narrower than 768 px, the navigation collapses into a
+       ☰ hamburger icon. Clicking it toggles the menu open/closed.
+
+FEATURE 9 – Scroll-Reveal Fade-In Animation
+  Pages: All pages (cards, sections)
+  How: Elements with the class .fade-in use IntersectionObserver to
+       animate into view (opacity + translateY) as the user scrolls
+       down, giving a polished, professional feel.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. RESPONSIVENESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The website is fully responsive across all screen sizes:
+  • Desktop (1200px+)   — 3-column grid, full navbar
+  • Tablet  (768–1199px) — 2-column grid, navbar wraps
+  • Mobile  (<768px)    — 1-column grid, hamburger menu, adjusted font
+                          sizes, touch-friendly buttons
+
+CSS techniques used:
+  • CSS Grid with auto-fit / minmax for fluid columns
+  • Flexbox for navbar and stats row
+  • Media queries at 768px breakpoint
+  • Relative units (%, em, vw/vh) throughout
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. UI/UX HIGHLIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • Consistent colour palette: Navy #0f172a, Sky Blue #38bdf8, White
+  • Hover animations on all cards and buttons (smooth 0.3s transitions)
+  • Hero section with a dark overlay for legible text over the image
+  • Sticky navbar so navigation is always accessible
+  • Clear feedback on all user actions (form validation, registration)
+  • Animated modal entrance (scale + fade) for polished feel
+  • Dark mode that covers every element consistently
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. CODE QUALITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • Meaningful comments in both CSS and JS marking each section
+  • Consistent 4-space indentation throughout
+  • Semantic HTML5 elements: <header>, <nav>, <main>, <footer>, <section>
+  • All images have descriptive alt attributes for accessibility
+  • JS uses DOMContentLoaded to avoid script-before-DOM errors
+  • No inline styles or inline scripts — all external
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. CHALLENGES & LEARNINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Challenge 1: Making dark mode persist across page navigations.
+Solution: Used localStorage to save and restore the theme preference
+          on every page load inside DOMContentLoaded.
+
+Challenge 2: Lightbox and modal both needed click-outside-to-close.
+Solution: Added event listeners on the overlay itself and checked
+          e.target === overlay before closing, so clicking the
+          image/modal box itself does not accidentally close it.
+
+Challenge 3: Scroll-reveal without a library.
+Solution: Used the native IntersectionObserver API with a 0.15 threshold
+          for a smooth, dependency-free fade-in effect.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. REFERENCES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • MDN Web Docs — JavaScript, CSS, HTML reference
+  • Google Fonts — Poppins typeface
+  • All images created/sourced for this academic project only
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+END OF REPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

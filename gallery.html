@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Portal - Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="CA Portal Logo">
+            <h2>CA Portal</h2>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button id="darkModeBtn" class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Gallery</h1>
+    <p style="margin-bottom:20px; color:#64748b;">Click any image to view it full screen.</p>
+</main>
+
+<!-- Gallery Grid -->
+<div class="gallery-grid">
+    <img src="images/students.png"   alt="Students"   onclick="openLightbox(this.src, this.alt)" class="fade-in">
+    <img src="images/coding.png"     alt="Coding"     onclick="openLightbox(this.src, this.alt)" class="fade-in">
+    <img src="images/graduation.png" alt="Graduation" onclick="openLightbox(this.src, this.alt)" class="fade-in">
+    <img src="images/achievement.png"alt="Achievement" onclick="openLightbox(this.src, this.alt)" class="fade-in">
+    <img src="images/campus.png"     alt="Campus"     onclick="openLightbox(this.src, this.alt)" class="fade-in">
+    <img src="images/event.png"      alt="Event"      onclick="openLightbox(this.src, this.alt)" class="fade-in">
+</div>
+
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+    <button class="close-lb" onclick="closeLightbox()">✕ Close</button>
+</div>
+
+<footer>
+    <p>© 2026 CA Department &nbsp;|&nbsp; info@college.com</p>
+</footer>
+
+<button id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

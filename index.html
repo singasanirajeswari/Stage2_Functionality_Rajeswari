@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Portal - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="CA Portal Logo">
+            <h2>CA Portal</h2>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button id="darkModeBtn" class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Empowering Future Developers 🚀</h1>
+    <p>Explore innovation, events, and achievements of the CA Department</p>
+    <button onclick="location.href='events.html'">Explore Events</button>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="grid">
+    <div class="card fade-in">
+        <img src="images/tech-bg.png" alt="Technology">
+        <h3>Technology</h3>
+        <p>Cutting-edge tools and modern learning experiences</p>
+    </div>
+
+    <div class="card fade-in">
+        <img src="images/students.png" alt="Community">
+        <h3>Community</h3>
+        <p>Collaborative and vibrant student environment</p>
+    </div>
+
+    <div class="card fade-in">
+        <img src="images/achievement.png" alt="Achievements">
+        <h3>Achievements</h3>
+        <p>Celebrating outstanding student success stories</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 CA Department &nbsp;|&nbsp; info@college.com</p>
+</footer>
+
+<!-- Scroll to Top -->
+<button id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

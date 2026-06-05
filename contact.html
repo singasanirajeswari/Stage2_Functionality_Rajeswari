@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Portal - Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="CA Portal Logo">
+            <h2>CA Portal</h2>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li>
+                <button id="darkModeBtn" class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Contact Us</h1>
+    <p style="margin-bottom: 20px; color:#64748b;">
+        Have a question or want to connect? Fill in the form below.
+    </p>
+
+    <form id="contactForm" novalidate>
+        <input
+            type="text"
+            id="contactName"
+            placeholder="Your Full Name"
+            required
+        >
+        <input
+            type="email"
+            id="contactEmail"
+            placeholder="Your Email Address"
+            required
+        >
+        <textarea
+            id="contactMessage"
+            placeholder="Your Message (minimum 10 characters)"
+            required
+        ></textarea>
+        <button type="submit">Send Message</button>
+        <div id="formFeedback" class="form-feedback"></div>
+    </form>
+</main>
+
+<footer>
+    <p>© 2026 CA Department &nbsp;|&nbsp; info@college.com</p>
+</footer>
+
+<button id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

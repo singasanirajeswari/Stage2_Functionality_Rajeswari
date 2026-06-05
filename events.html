@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Portal - Events</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="CA Portal Logo">
+            <h2>CA Portal</h2>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button id="darkModeBtn" class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Search Bar (Feature: Filter Events) -->
+<div class="search-wrap">
+    <input
+        type="text"
+        id="eventSearch"
+        class="search-bar"
+        placeholder="🔍 Search events..."
+        oninput="filterEvents()"
+    >
+</div>
+
+<main class="grid">
+
+    <div class="card event-card fade-in">
+        <img src="images/coding.png" alt="Hackathon">
+        <h3>Hackathon 2026</h3>
+        <p>📅 Date: June 15, 2026</p>
+        <p>Build innovative solutions in 24 hours</p>
+        <button class="btn-register" onclick="registerEvent('Hackathon 2026')">Register Now</button>
+    </div>
+
+    <div class="card event-card fade-in">
+        <img src="images/event.png" alt="Tech Seminar">
+        <h3>Tech Seminar</h3>
+        <p>📅 Date: July 10, 2026</p>
+        <p>Industry expert talks and panel discussions</p>
+        <button class="btn-register" onclick="registerEvent('Tech Seminar')">Register Now</button>
+    </div>
+
+    <div class="card event-card fade-in">
+        <img src="images/students.png" alt="Workshop">
+        <h3>Workshop</h3>
+        <p>📅 Date: August 5, 2026</p>
+        <p>Hands-on training with live projects</p>
+        <button class="btn-register" onclick="registerEvent('Workshop')">Register Now</button>
+    </div>
+
+    <div class="card event-card fade-in">
+        <img src="images/graduation.png" alt="Graduation Ceremony">
+        <h3>Graduation Ceremony</h3>
+        <p>📅 Date: September 20, 2026</p>
+        <p>Celebrate academic achievements</p>
+        <button class="btn-register" onclick="registerEvent('Graduation Ceremony')">Register Now</button>
+    </div>
+
+</main>
+
+<!-- Event Registration Modal -->
+<div class="modal-overlay" id="eventModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <h2>Register for <span id="modalEventName"></span></h2>
+
+        <form id="regForm">
+            <input type="text" id="regName" placeholder="Your Full Name" required>
+            <input type="email" id="regEmail" placeholder="Your Email Address" required>
+            <button type="submit">Confirm Registration</button>
+        </form>
+        <div id="regStatus"></div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 CA Department &nbsp;|&nbsp; info@college.com</p>
+</footer>
+
+<button id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

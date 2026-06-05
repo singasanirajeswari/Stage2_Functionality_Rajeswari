@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Portal - About</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="CA Portal Logo">
+            <h2>CA Portal</h2>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button id="darkModeBtn" class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>About the Department</h1>
+
+    <img src="images/students.png" alt="Students" style="max-height:320px; object-fit:cover; width:100%;" class="fade-in">
+
+    <p style="margin-top:20px; line-height:1.7;" class="fade-in">
+        The Computer Applications Department is dedicated to building strong technical and
+        problem-solving skills among students. Our curriculum blends theory with hands-on
+        industry projects to ensure graduates are job-ready.
+    </p>
+
+    <h2 class="fade-in">Vision</h2>
+    <p class="fade-in">To create highly skilled and innovative software professionals who make a positive impact.</p>
+
+    <h2 class="fade-in">Mission</h2>
+    <p class="fade-in">Provide quality education, industry exposure, and practical learning experiences that nurture creativity and critical thinking.</p>
+</main>
+
+<!-- Animated Stats -->
+<div class="stats-row">
+    <div class="stat-box fade-in">
+        <div class="counter" data-target="500" data-suffix="+">0</div>
+        <p>Students Enrolled</p>
+    </div>
+    <div class="stat-box fade-in">
+        <div class="counter" data-target="20" data-suffix="+">0</div>
+        <p>Expert Faculty</p>
+    </div>
+    <div class="stat-box fade-in">
+        <div class="counter" data-target="15" data-suffix="+">0</div>
+        <p>Years of Excellence</p>
+    </div>
+    <div class="stat-box fade-in">
+        <div class="counter" data-target="95" data-suffix="%">0</div>
+        <p>Placement Rate</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 CA Department &nbsp;|&nbsp; info@college.com</p>
+</footer>
+
+<button id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
