@@ -1,0 +1,530 @@
+/* =============================================
+   CA Portal - Stylesheet (Stage 2)
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* ---- RESET ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7fb;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.4s, color 0.4s;
+}
+
+/* =============================================
+   DARK MODE
+   ============================================= */
+body.dark-mode {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+body.dark-mode nav          { background: #020617; }
+body.dark-mode footer       { background: #020617; }
+body.dark-mode .card        { background: #1e293b; color: #e2e8f0; }
+body.dark-mode main         { background: #0f172a; }
+body.dark-mode .modal-box   { background: #1e293b; color: #e2e8f0; }
+body.dark-mode form input,
+body.dark-mode form textarea { background: #334155; color: #e2e8f0; border-color: #475569; }
+body.dark-mode .stat-box    { background: #1e293b; }
+body.dark-mode .search-bar  { background: #1e293b; color: #e2e8f0; border-color: #475569; }
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f172a;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+    border-radius: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    align-items: center;
+}
+
+nav ul li a {
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+    background: transparent;
+    border: 1px solid #38bdf8;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+.dark-toggle:hover { background: #38bdf8; color: #0f172a; }
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 120px 20px;
+    background: url('../images/campus.png') center/cover no-repeat;
+    color: white;
+    flex: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.72);
+}
+
+.hero h1,
+.hero p,
+.hero button {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 42px;
+    animation: fadeDown 0.8s ease both;
+}
+
+.hero p {
+    margin-top: 12px;
+    font-size: 18px;
+    animation: fadeDown 1s ease both;
+}
+
+.hero button {
+    margin-top: 24px;
+    padding: 13px 30px;
+    border: none;
+    background: #38bdf8;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+    animation: fadeDown 1.2s ease both;
+}
+
+.hero button:hover {
+    background: #0ea5e9;
+    transform: scale(1.05);
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   GRID & CARDS
+   ============================================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 36px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.09);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.card h3 { margin-bottom: 6px; }
+.card p  { font-size: 14px; color: #64748b; }
+body.dark-mode .card p { color: #94a3b8; }
+
+/* Register button on event cards */
+.btn-register {
+    margin-top: 12px;
+    padding: 8px 20px;
+    background: #38bdf8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-register:hover { background: #0ea5e9; transform: scale(1.04); }
+
+/* =============================================
+   IMAGES (global)
+   ============================================= */
+img { max-width: 100%; border-radius: 10px; }
+
+/* =============================================
+   GALLERY
+   ============================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-overlay img {
+    max-width: 88vw;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+.lightbox-overlay .close-lb {
+    background: #38bdf8;
+    border: none;
+    color: white;
+    padding: 8px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* =============================================
+   ABOUT STATS
+   ============================================= */
+.stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.stat-box {
+    background: white;
+    border-radius: 14px;
+    padding: 28px 40px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    min-width: 160px;
+    transition: transform 0.3s;
+}
+.stat-box:hover { transform: translateY(-6px); }
+
+.counter {
+    font-size: 40px;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.stat-box p { font-size: 14px; color: #64748b; margin-top: 4px; }
+body.dark-mode .stat-box p { color: #94a3b8; }
+
+/* =============================================
+   MAIN
+   ============================================= */
+main {
+    padding: 30px;
+    flex: 1;
+}
+
+main h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #0f172a;
+}
+body.dark-mode main h1 { color: #e2e8f0; }
+
+main h2 { margin: 18px 0 8px; color: #0369a1; }
+
+/* =============================================
+   SEARCH BAR (Events page)
+   ============================================= */
+.search-wrap {
+    padding: 20px 36px 0;
+}
+.search-bar {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+.search-bar:focus { border-color: #38bdf8; }
+
+/* =============================================
+   CONTACT FORM
+   ============================================= */
+form input,
+form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+    border: 1px solid #cbd5e1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+form input:focus,
+form textarea:focus { border-color: #38bdf8; }
+
+form textarea { min-height: 130px; resize: vertical; }
+
+form button {
+    padding: 11px 26px;
+    border: none;
+    background: #38bdf8;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background 0.3s, transform 0.2s;
+}
+form button:hover { background: #0ea5e9; transform: scale(1.03); }
+
+.form-feedback {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 20px;
+}
+.form-feedback.success { color: #22c55e; }
+.form-feedback.error   { color: #ef4444; }
+
+/* =============================================
+   EVENT REGISTRATION MODAL
+   ============================================= */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 998;
+    justify-content: center;
+    align-items: center;
+}
+.modal-overlay.active { display: flex; }
+
+.modal-box {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 32px;
+    width: 90%;
+    max-width: 440px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    position: relative;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+.modal-box h2 { margin-bottom: 18px; color: #0f172a; }
+body.dark-mode .modal-box h2 { color: #e2e8f0; }
+
+.modal-close {
+    position: absolute;
+    top: 14px; right: 18px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #64748b;
+    transition: color 0.2s;
+}
+.modal-close:hover { color: #ef4444; }
+
+#regStatus { margin-top: 10px; font-size: 14px; font-weight: 500; }
+
+/* =============================================
+   SCROLL-TO-TOP
+   ============================================= */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 28px;
+    background: #38bdf8;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    z-index: 200;
+    transition: background 0.3s, transform 0.2s;
+}
+#scrollTopBtn:hover { background: #0ea5e9; transform: scale(1.1); }
+
+/* =============================================
+   FADE-IN ANIMATION (scroll reveal)
+   ============================================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+    nav { padding: 14px 20px; flex-wrap: wrap; }
+
+    .hamburger { display: flex; }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 14px;
+        gap: 6px;
+    }
+    nav ul.open { display: flex; }
+
+    nav ul li a { display: block; text-align: center; }
+
+    .hero h1 { font-size: 26px; }
+    .hero p  { font-size: 15px; }
+
+    .grid, .gallery-grid { padding: 16px; gap: 16px; }
+
+    main { padding: 20px; }
+    main h1 { font-size: 22px; }
+
+    .stats-row { padding: 16px; }
+    .stat-box  { padding: 20px 28px; }
+
+    .search-wrap { padding: 16px 16px 0; }
+
+    #scrollTopBtn { bottom: 16px; right: 16px; }
+}
